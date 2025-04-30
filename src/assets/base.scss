@@ -1,8 +1,9 @@
 @forward './reset';
 :root {
   --color-white: #fff;
-  --color-background: #fff;
-  --color-text: #000;
+  --color-blue: #0027d5;
+  --color-background: #fbfbfb;
+  --color-black: #000;
 }
 
 *,
@@ -14,11 +15,8 @@
 }
 
 body {
-  color: var(--color-text);
+  color: var(--color-black);
   background: var(--color-background);
-  transition:
-    color 0.5s,
-    background-color 0.5s;
   font-family:
     'Noto Sans TC',
     sans-serif,
@@ -36,9 +34,13 @@ body {
   font-size: 16px;
   font-weight: 500;
   max-width: 1920px;
-  min-width: 360px;
+  min-width: 375px;
   margin: 0 auto;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+img {
+  width: 100%;
+  max-width: 100%;
 }

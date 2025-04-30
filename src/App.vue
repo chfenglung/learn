@@ -1,13 +1,15 @@
 <script setup>
   import { RouterView } from 'vue-router'
+  import NavBar from './components/NavBar.vue'
 </script>
 
 <template>
-  <RouterView />
+  <NavBar></NavBar>
+  <router-view id="view"></router-view>
 </template>
 
 <style scoped>
-  header {
+  /* header {
     line-height: 1.5;
     max-height: 100vh;
   }
@@ -67,5 +69,5 @@
       padding: 1rem 0;
       margin-top: 1rem;
     }
-  }
+  } */
 </style>
