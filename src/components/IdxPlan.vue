@@ -139,7 +139,7 @@
         &::before {
           position: absolute;
           content: '';
-          width: 13px;
+          width: 18px;
           height: 1px;
           background-color: var(--color-black);
           top: 50%;
@@ -170,9 +170,6 @@
   @media (max-width: 768px) {
     .IdxPlan {
       padding: 64px 0;
-      h2 {
-        font-size: 48px;
-      }
       .list {
         gap: 32px;
         &-item {

@@ -8,7 +8,7 @@
   <router-view id="view"></router-view>
 </template>
 
-<style scoped>
+<style lang="scss">
   /* header {
     line-height: 1.5;
     max-height: 100vh;
