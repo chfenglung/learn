@@ -59,8 +59,8 @@
     </div>
     <div class="description">
       <p>
-        <span>{{ data.description[0] }}</span
-        ><span>{{ data.description[1] }}</span>
+        <span>{{ data.description[0] }}</span>
+        <span>{{ data.description[1] }}</span>
       </p>
       <p>{{ data.description[2] }}</p>
       <ul>

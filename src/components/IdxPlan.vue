@@ -56,17 +56,6 @@
 <style lang="scss">
   .IdxPlan {
     padding: 80px 0;
-    .container {
-      width: 100%;
-      max-width: 1296px;
-      margin: 0 auto;
-    }
-    h2 {
-      font-size: 64px;
-      font-weight: 700;
-      line-height: 150%;
-      color: var(--color-black);
-    }
 
     .list {
       display: flex;

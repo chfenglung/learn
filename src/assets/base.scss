@@ -4,6 +4,8 @@
   --color-blue: #0027d5;
   --color-background: #fbfbfb;
   --color-black: #000;
+  --color-grey: #4b4b4b;
+  --color-disable: #b2bef2;
 }
 
 *,
@@ -43,4 +45,15 @@ body {
 img {
   width: 100%;
   max-width: 100%;
+}
+.container {
+  width: 100%;
+  max-width: 1296px;
+  margin: 0 auto;
+}
+h2 {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 150%;
+  color: var(--color-black);
 }

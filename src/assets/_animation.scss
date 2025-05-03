@@ -1,0 +1,9 @@
+@keyframes animate-float-x {
+  from {
+    transform: translateX(8px);
+  }
+
+  to {
+    transform: translateX(-8px);
+  }
+}
