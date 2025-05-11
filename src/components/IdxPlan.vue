@@ -3,22 +3,22 @@
     title: '專業服務與方案',
     list: [
       {
-        img: 'https://fenglung.url.tw/learn-img/idx/photo1.png',
+        img: 'https://www.fenglung.url.tw/learn-img/idx/photo1.png',
         title: '履歷健檢',
         text: '履歷是打開機會之門的第一步。讓我協助你突顯專業技術與核心能力，並透過簡短模擬面試為你加分，讓面試官第一眼就被你吸引。'
       },
       {
-        img: 'https://fenglung.url.tw/learn-img/idx/photo2.png',
+        img: 'https://www.fenglung.url.tw/learn-img/idx/photo2.png',
         title: '線上諮詢',
         text: '想快速解決前端學習瓶頸，或需要專業職涯指引？透過線上一對一諮詢，我將協助你更有方向地邁進。'
       },
       {
-        img: 'https://fenglung.url.tw/learn-img/idx/photo3.png',
+        img: 'https://www.fenglung.url.tw/learn-img/idx/photo3.png',
         title: '網頁開發',
         text: '想打造高效能、具美感的網站？我提供從需求訪談到架構實作的一站式服務，讓你的品牌與產品在線上脫穎而出。'
       },
       {
-        img: 'https://fenglung.url.tw/learn-img/idx/photo4.png',
+        img: 'https://www.fenglung.url.tw/learn-img/idx/photo4.png',
         title: '企業內訓',
         text: '想讓團隊快速掌握前端最新技術或優化現有專案流程？我可協助打造專業、實用的企業內訓課程，一次解決團隊痛點。'
       }
@@ -61,7 +61,6 @@
       display: flex;
       flex-direction: column;
       gap: 64px;
-      width: 100%;
       max-width: 1076px;
       margin: 32px auto 0;
 
@@ -111,7 +110,6 @@
       }
     }
     .more {
-      width: 100%;
       max-width: 1076px;
       margin: 32px auto 0;
       font-size: 28px;
@@ -157,13 +155,6 @@
           height: 9px;
           transform: translateY(-50%) rotate(45deg);
         }
-      }
-    }
-  }
-  @media (max-width: 1680px) {
-    .IdxPlan {
-      .container {
-        padding: 0 12px;
       }
     }
   }

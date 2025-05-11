@@ -7,33 +7,33 @@
       '一名深耕前端技術的工程師。',
       '擅長 React、Vue 等框架，同時熱愛為轉職與新手工程師提供職涯指導。邀請你與我一起，開啟更具潛能的程式與職涯之旅！'
     ],
-    peoplePc: 'https://fenglung.url.tw/learn-img/Hero-pc.png',
-    peopleMb: 'https://fenglung.url.tw/learn-img/Hero-mb.png',
-    titlePc: 'https://fenglung.url.tw/learn-img/idxKvBg-pc.png',
-    titleMb: 'https://fenglung.url.tw/learn-img/idxKvBg-mb.png',
+    peoplePc: 'https://www.fenglung.url.tw/learn-img/Hero-pc.png',
+    peopleMb: 'https://www.fenglung.url.tw/learn-img/Hero-mb.png',
+    titlePc: 'https://www.fenglung.url.tw/learn-img/idxKvBg-pc.png',
+    titleMb: 'https://www.fenglung.url.tw/learn-img/idxKvBg-mb.png',
     community: [
       {
-        icon: 'https://fenglung.url.tw/learn-img/icon-youtube.png',
+        icon: 'https://www.fenglung.url.tw/learn-img/icon-youtube.png',
         link: 'javascript:;',
         title: 'YouTube'
       },
       {
-        icon: 'https://fenglung.url.tw/learn-img/icon-Podcast.png',
+        icon: 'https://www.fenglung.url.tw/learn-img/icon-Podcast.png',
         link: 'javascript:;',
         title: 'Podcast'
       },
       {
-        icon: 'https://fenglung.url.tw/learn-img/icon-Facebook.png',
+        icon: 'https://www.fenglung.url.tw/learn-img/icon-Facebook.png',
         link: 'javascript:;',
         title: 'Facebook'
       },
       {
-        icon: 'https://fenglung.url.tw/learn-img/icon-Linkedin.png',
+        icon: 'https://www.fenglung.url.tw/learn-img/icon-Linkedin.png',
         link: 'javascript:;',
         title: 'Linkedin'
       },
       {
-        icon: 'https://fenglung.url.tw/learn-img/icon-Instagram.png',
+        icon: 'https://www.fenglung.url.tw/learn-img/icon-Instagram.png',
         link: 'javascript:;',
         title: 'Instagram'
       }
@@ -81,7 +81,6 @@
     padding-bottom: 202px;
     .content {
       display: flex;
-      width: 100%;
       height: calc(843 / 1920) * 100%;
       position: relative;
       .people {

@@ -3,7 +3,7 @@
     title: '部落格精選',
     slider: [
       {
-        img: 'https://fenglung.url.tw/learn-img/idx/idx-slide1.png',
+        img: 'https://www.fenglung.url.tw/learn-img/idx/idx-slide1.png',
         date: '2024/10/21',
         tag: '前端開發 x 職涯成長',
         hot: '最新文章',
@@ -12,11 +12,11 @@
           '嗨，我是 Alyse，一名前端工程師兼職涯諮詢師。一直以來，我都很喜歡在部落格分享學習與工作心得，也常有讀者問：「我想轉職/自學前端，該從哪裡開始？」 其實自學的過程既自由又具挑戰性。我整理了三大關鍵，幫助你在短期內建立紮實基礎，並快速累積實戰經驗。希望能替你的前端之路帶來一些啟發與動力！',
         detailed: {
           text: '閱讀內文',
-          link: '/detailed'
+          link: '/detailed/'
         }
       },
       {
-        img: 'https://fenglung.url.tw/learn-img/idx/idx-slide2.png',
+        img: 'https://www.fenglung.url.tw/learn-img/idx/idx-slide2.png',
         date: '2024/07/08',
         tag: '#面試準備 #工程師求職',
         hot: '人氣文章',
@@ -25,11 +25,11 @@
           '面試前端工程師時，你或許擔心被問到各種刁鑽的技術題目，或是擔憂無法在短時間內展現實力。其實，許多面試官關注的重點並不僅是程式碼本身，更包含問題解決的流程與溝通能力。這篇文章將分享我在面試過程中常見的三大難題，以及如何以更具條理的方式回應，讓你在面試場合中脫穎而出。',
         detailed: {
           text: '閱讀內文',
-          link: '/detailed'
+          link: '/detailed/'
         }
       },
       {
-        img: 'https://fenglung.url.tw/learn-img/idx/idx-slide3.png',
+        img: 'https://www.fenglung.url.tw/learn-img/idx/idx-slide3.png',
         date: '2024/09/03',
         tag: '#CSS設計 #視覺體驗',
         hot: '',
@@ -38,7 +38,7 @@
           '在瀏覽器畫面上實現各種精美介面，一直是前端開發充滿成就感的部分。但當面臨複雜的佈局需求或是響應式設計時，往往讓人抓破頭皮。這篇文章想跟大家分享我在實務專案中累積的三大技巧，幫助你更有效率地駕馭 CSS，打造兼具美感與功能性的網頁。',
         detailed: {
           text: '閱讀內文',
-          link: '/detailed'
+          link: '/detailed/'
         }
       }
     ]
@@ -64,7 +64,9 @@
             </div>
             <h3>{{ item.title }}</h3>
             <p class="description">{{ item.description }}</p>
-            <a :href="item.detailed.link" class="more">{{ item.detailed.text }}</a>
+            <router-link :to="item.detailed.link + `${idx + 1}`" class="more">{{
+              item.detailed.text
+            }}</router-link>
           </div>
         </li>
       </ul>
@@ -80,22 +82,17 @@
   .idxChosen {
     padding: 80px 0;
     overflow: hidden;
-    .container {
-      width: 100%;
-      max-width: 1296px;
-      margin: 0 auto;
-    }
+
     .slide {
-      width: 100%;
       max-width: 1432px;
       margin: 24px auto 0;
       position: relative;
 
       &-content {
-        width: 100%;
         max-width: 1432px;
         display: flex;
         justify-content: center;
+
         gap: 24px;
         > li {
           width: 416px;
@@ -108,6 +105,7 @@
       .date {
         font-size: 16px;
         font-weight: 500;
+        margin-bottom: 4px;
       }
       .tag {
         display: flex;
@@ -117,6 +115,7 @@
           font-weight: 500;
           color: var(--color-blue);
           display: inline;
+          line-height: 150%;
         }
         .hot {
           background-color: var(--color-blue);
@@ -125,7 +124,6 @@
           margin-left: 8px;
           font-size: 16px;
           font-weight: 700;
-          line-height: 150%;
           display: inline-block;
           padding: 6px 12px;
           white-space: nowrap;
@@ -146,7 +144,6 @@
         text-overflow: ellipsis;
         font-size: 16px;
         font-weight: 500;
-        line-height: 150%;
         color: var(--color-grey);
       }
       .more {
@@ -155,7 +152,6 @@
         border-radius: 20px;
         font-size: 16px;
         font-weight: 500;
-        line-height: 150%;
         padding: 8px 16px;
         display: inline-block;
         margin-top: 16px;
@@ -173,7 +169,6 @@
         display: flex;
         justify-content: space-between;
         margin: 0 auto;
-        width: 100%;
         transform: translateY(-50%);
       }
       &-prev,
@@ -238,9 +233,6 @@
   }
   @media (max-width: 1680px) {
     .idxChosen {
-      .container {
-        padding: 0 12px;
-      }
       .slide {
         padding-bottom: 74px;
         max-width: 1296px;
