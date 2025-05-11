@@ -27,14 +27,10 @@
   .NavBar {
     background-color: var(-color-background);
     height: 90px;
-    width: 100%;
     max-width: 1920px;
     min-width: 375px;
     margin: 0 auto;
     .container {
-      width: 100%;
-      max-width: 1280px;
-      margin: 0 auto;
       height: 100%;
     }
     ul {

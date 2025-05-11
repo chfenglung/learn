@@ -9,8 +9,8 @@
     ],
     peoplePc: 'https://www.fenglung.url.tw/learn-img/Hero-pc.png',
     peopleMb: 'https://www.fenglung.url.tw/learn-img/Hero-mb.png',
-    titlePc: 'https://www.fenglung.url.tw/learn-img/idxKvBg-pc.png',
-    titleMb: 'https://www.fenglung.url.tw/learn-img/idxKvBg-mb.png',
+    titlePc: 'https://www.fenglung.url.tw/learn-img/idx/idxKvBg-pc.png',
+    titleMb: 'https://www.fenglung.url.tw/learn-img/idx/idxKvBg-mb.png',
     community: [
       {
         icon: 'https://www.fenglung.url.tw/learn-img/icon-youtube.png',

@@ -4,6 +4,7 @@
   import IdxPlan from '../components/IdxPlan.vue'
   import IdxChosen from '../components/IdxChosen.vue'
   import IdxCase from '../components/IdxCase.vue'
+  import IdxNews from '../components/IdxNews.vue'
 </script>
 
 <template>
@@ -12,6 +13,7 @@
     <IdxPlan></IdxPlan>
     <IdxChosen></IdxChosen>
     <IdxCase></IdxCase>
+    <IdxNews></IdxNews>
   </main>
 </template>
 

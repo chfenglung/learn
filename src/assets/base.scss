@@ -35,7 +35,7 @@ body {
     'Helvetica Neue';
   font-size: 16px;
   font-weight: 500;
-  max-width: 1920px;
+  line-height: 150%;
   min-width: 375px;
   margin: 0 auto;
   text-rendering: optimizeLegibility;
@@ -47,7 +47,6 @@ img {
   max-width: 100%;
 }
 .container {
-  width: 100%;
   max-width: 1296px;
   margin: 0 auto;
 }
@@ -56,6 +55,11 @@ h2 {
   font-weight: 700;
   line-height: 150%;
   color: var(--color-black);
+}
+@media (max-width: 1680px) {
+  .container {
+    padding: 0 12px;
+  }
 }
 @media (max-width: 768px) {
   h2 {
