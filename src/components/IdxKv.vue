@@ -81,11 +81,11 @@
     padding-bottom: 202px;
     .content {
       display: flex;
-      height: calc(843 / 1920) * 100%;
+      height: calc(834 / 1920) * 100%;
       position: relative;
       .people {
         background-image: var(--peoplePc);
-        padding-top: calc(843 / 1920) * 100%;
+        padding-top: calc(834 / 1920) * 100%;
         width: 50%;
         height: 100%;
         background-size: cover;
