@@ -81,6 +81,7 @@
 <style lang="scss">
   .idxChosen {
     padding: 80px 0;
+    border: 1px solid var(--color-secondary);
     overflow: hidden;
 
     .slide {

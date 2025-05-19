@@ -118,6 +118,7 @@
 <style lang="scss">
   .IdxCase {
     padding: 80px 0;
+    border: 1px solid var(--color-secondary);
     .case {
       display: flex;
       flex-direction: column;

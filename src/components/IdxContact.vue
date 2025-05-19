@@ -72,6 +72,7 @@
 <style lang="scss">
   .IdxContact {
     padding: 80px 0;
+    border: 1px solid var(--color-secondary);
     .community {
       > li {
         position: relative;
