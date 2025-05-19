@@ -5,6 +5,7 @@
   import IdxChosen from '../components/IdxChosen.vue'
   import IdxCase from '../components/IdxCase.vue'
   import IdxNews from '../components/IdxNews.vue'
+  import IdxContact from '../components/IdxContact.vue'
 </script>
 
 <template>
@@ -14,6 +15,7 @@
     <IdxChosen></IdxChosen>
     <IdxCase></IdxCase>
     <IdxNews></IdxNews>
+    <IdxContact></IdxContact>
   </main>
 </template>
 
