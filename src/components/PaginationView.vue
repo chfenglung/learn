@@ -72,7 +72,7 @@
         v-for="num in showNav"
         :key="num"
         class="page-number"
-        :class="{ active: currentPage + 1 === num }"
+        :class="{ active: currentPage === num }"
         @click="changePage(num)"
       >
         {{ num }}
@@ -127,8 +127,8 @@
       &:disabled {
         cursor: default;
         &::before {
-          border-left: 1px solid var(--color-grey);
-          border-bottom: 1px solid var(--color-grey);
+          border-left: 1px solid var(--color-disable);
+          border-bottom: 1px solid var(--color-disable);
         }
       }
     }
