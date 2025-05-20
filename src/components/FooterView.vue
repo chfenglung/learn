@@ -11,5 +11,6 @@
     line-height: 150%;
     text-align: center;
     padding: 24px 0;
+    background-color: var(--color-white);
   }
 </style>

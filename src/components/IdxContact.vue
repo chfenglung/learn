@@ -11,31 +11,31 @@
         title: 'youtube',
         icon: 'https://www.fenglung.url.tw/learn-img/icon-youtube.png',
         text: ['Youtube', '職涯諮詢室'],
-        link: 'Youtube.com'
+        link: 'https://Youtube.com'
       },
       {
         title: 'podcast',
         icon: 'https://www.fenglung.url.tw/learn-img/icon-Podcast.png',
         text: ['podcast', '職涯諮詢室'],
-        link: 'podcast.com'
+        link: 'https://podcast.com'
       },
       {
         title: 'Facebook',
         icon: 'https://www.fenglung.url.tw/learn-img/icon-Facebook.png',
         text: ['Facebook', '前端社群'],
-        link: 'Facebook.com'
+        link: 'https://Facebook.com'
       },
       {
         title: 'Linkedin',
         icon: 'https://www.fenglung.url.tw/learn-img/icon-Linkedin.png',
         text: ['Linkedin', '職涯交流'],
-        link: 'Linkedin.com'
+        link: 'https://Linkedin.com'
       },
       {
         title: 'Instagram',
         icon: 'https://www.fenglung.url.tw/learn-img/icon-Instagram.png',
         text: ['Instagram', '日常分享'],
-        link: 'Instagram.com'
+        link: 'https://Instagram.com'
       }
     ]
   }
