@@ -154,7 +154,7 @@
       <PaginationView
         :page-num="pageNum"
         :current-page="nowPage"
-        @changePage="changePage"
+        @change-page="changePage"
       ></PaginationView>
     </div>
   </section>
@@ -295,6 +295,7 @@
   }
   @media (max-width: 768px) {
     .BlogList {
+      padding: 64px 0;
       .container {
         max-width: 375px;
       }

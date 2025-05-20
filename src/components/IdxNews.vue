@@ -14,6 +14,7 @@
   }
   const name = ref('')
   const email = ref('')
+  const isSubmitting = ref(false)
 </script>
 
 <template>

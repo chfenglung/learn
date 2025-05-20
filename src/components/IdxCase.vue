@@ -107,7 +107,7 @@
             <ul class="check">
               <li v-for="(li, idx) in single.list" :key="idx">{{ li }}</li>
             </ul>
-            <a :href="podcast / `${i + 1}`">前往聆聽 podcast</a>
+            <a :href="'/podcast/' + `${i + 1}`">前往聆聽 podcast</a>
           </li>
         </ul>
       </div>
