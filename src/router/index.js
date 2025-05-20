@@ -21,7 +21,13 @@ const router = createRouter({
       name: 'detailed',
       component: DetailedView
     }
-  ]
+  ],
+  scrollBehavior() {
+    return {
+      top: 0,
+      behavior: 'smooth'
+    }
+  }
 })
 
 export default router
