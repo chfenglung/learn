@@ -1,5 +1,6 @@
 <script setup>
-  import {} from 'vue'
+  import { ref } from 'vue'
+  import PaginationView from './PaginationView.vue'
   const data = [
     {
       img: 'https://www.fenglung.url.tw/learn-img/blog/blog-list-1.png',
@@ -101,11 +102,32 @@
         '寫程式容易，但要確保程式在多種情境、裝置都能正常運行就沒那麼簡單了。這時「測試」便成了維持程式品質的關鍵環節。從最基礎的單元測試，到模擬使用者行為的端對端測試，每一種測試方式都有它的價值與最佳應用情境。本文將帶你認識不同類型的前端測試工具，以及如何在開發流程中實踐自動化測試，打造更穩定、可預期的專案。'
     }
   ]
+  const nowPage = ref(0)
+  const pageNum = ref(40)
+  const scrollToAnchor = anchor => {
+    const target = document.querySelector(anchor)
+    const navHeight = document.querySelector('.NavBar').offsetHeight
+
+    if (document.querySelector('.NavBar').getAttribute('class').includes('fx')) {
+      window.scrollTo({
+        top: target.offsetTop - navHeight,
+        behavior: 'smooth'
+      })
+    } else {
+      window.scrollTo({
+        top: target.offsetTop - navHeight * 2,
+        behavior: 'smooth'
+      })
+    }
+  }
+  const changePage = async () => {
+    scrollToAnchor('#List')
+  }
 </script>
 
 <template>
   <section class="BlogList">
-    <div class="container">
+    <div id="List" class="container">
       <div class="search">
         <div>
           <img src="https://www.fenglung.url.tw/learn-img/blog/icon-search.svg" alt="icon-search" />
@@ -129,6 +151,11 @@
           </div>
         </li>
       </ul>
+      <PaginationView
+        :page-num="pageNum"
+        :current-page="nowPage"
+        @changePage="changePage"
+      ></PaginationView>
     </div>
   </section>
 </template>
@@ -136,6 +163,8 @@
 <style lang="scss">
   .BlogList {
     padding: 96px 0;
+    border: 1px solid var(--color-grey);
+    margin-top: -1px;
     .search {
       margin-bottom: 40px;
       > div {
