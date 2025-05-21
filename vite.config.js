@@ -9,12 +9,6 @@ import eslintPlugin from 'vite-plugin-eslint'
 // https://vitejs.dev/config/
 export default defineConfig({
   base: '/learn/',
-  publicPath: '/learn/',
-  // base: '/learn/', // 子目錄路徑
-  // build: {
-  //   outDir: 'dist',
-  //   assetsDir: 'assets' // 確認資源目錄配置
-  // },
   plugins: [
     vue(),
     eslintPlugin({
