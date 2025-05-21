@@ -12,12 +12,12 @@
     meta: [
       {
         name: 'description',
-        content: '首頁，Chung切版作業練習LV2，包涵Flex排版、輪播、router應用'
+        content: '首頁，Chung切版作業練習LV2，Flex排版、輪播、router應用'
       },
       { property: 'og:title', content: '首頁 - Chung切版作業練習LV2' },
       {
         property: 'og:description',
-        content: '首頁，Chung切版作業練習LV2，包涵Flex排版、輪播、router應用'
+        content: '首頁，Chung切版作業練習LV2，Flex排版、輪播、router應用'
       }
     ],
     link: [{ rel: 'canonical', href: 'https://www.fenglung.url.tw/learn/' }]

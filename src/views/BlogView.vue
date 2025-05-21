@@ -10,12 +10,12 @@
     meta: [
       {
         name: 'description',
-        content: '部落格，Chung切版作業練習LV2，包涵Flex排版、router應用、分頁功能'
+        content: '部落格，Chung切版作業練習LV2，Flex排版、router應用、分頁功能'
       },
       { property: 'og:title', content: '部落格 - Chung切版作業練習LV2' },
       {
         property: 'og:description',
-        content: '部落格，Chung切版作業練習LV2，包涵Flex排版、router應用、分頁功能'
+        content: '部落格，Chung切版作業練習LV2，Flex排版、router應用、分頁功能'
       }
     ],
     link: [{ rel: 'canonical', href: 'https://www.fenglung.url.tw/learn/blog' }]
