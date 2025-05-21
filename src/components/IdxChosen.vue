@@ -1,78 +1,40 @@
 <script setup>
-  const data = {
-    title: '部落格精選',
-    slider: [
-      {
-        img: 'https://www.fenglung.url.tw/learn-img/idx/idx-slide1.png',
-        date: '2024/10/21',
-        tag: '前端開發 x 職涯成長',
-        hot: '最新文章',
-        title: '自學前端不用怕：從零開始的三大關鍵',
-        description:
-          '嗨，我是 Alyse，一名前端工程師兼職涯諮詢師。一直以來，我都很喜歡在部落格分享學習與工作心得，也常有讀者問：「我想轉職/自學前端，該從哪裡開始？」 其實自學的過程既自由又具挑戰性。我整理了三大關鍵，幫助你在短期內建立紮實基礎，並快速累積實戰經驗。希望能替你的前端之路帶來一些啟發與動力！',
-        detailed: {
-          text: '閱讀內文',
-          link: '/detailed/'
-        }
-      },
-      {
-        img: 'https://www.fenglung.url.tw/learn-img/idx/idx-slide2.png',
-        date: '2024/07/08',
-        tag: '#面試準備 #工程師求職',
-        hot: '人氣文章',
-        title: '前端面試不再慌：破解常見提問的三大策略',
-        description:
-          '面試前端工程師時，你或許擔心被問到各種刁鑽的技術題目，或是擔憂無法在短時間內展現實力。其實，許多面試官關注的重點並不僅是程式碼本身，更包含問題解決的流程與溝通能力。這篇文章將分享我在面試過程中常見的三大難題，以及如何以更具條理的方式回應，讓你在面試場合中脫穎而出。',
-        detailed: {
-          text: '閱讀內文',
-          link: '/detailed/'
-        }
-      },
-      {
-        img: 'https://www.fenglung.url.tw/learn-img/idx/idx-slide3.png',
-        date: '2024/09/03',
-        tag: '#CSS設計 #視覺體驗',
-        hot: '',
-        title: 'CSS 魔法大揭密：排版與設計的三大關鍵技巧',
-        description:
-          '在瀏覽器畫面上實現各種精美介面，一直是前端開發充滿成就感的部分。但當面臨複雜的佈局需求或是響應式設計時，往往讓人抓破頭皮。這篇文章想跟大家分享我在實務專案中累積的三大技巧，幫助你更有效率地駕馭 CSS，打造兼具美感與功能性的網頁。',
-        detailed: {
-          text: '閱讀內文',
-          link: '/detailed/'
-        }
-      }
-    ]
-  }
+  import { computed } from 'vue'
+  import chosenData from '@/assets/chosenList.json'
+  const titleData = computed(() => {
+    return chosenData.data.title
+  })
+  const sliderData = computed(() => {
+    return chosenData.data.slider
+  })
 </script>
 
 <template>
   <section class="idxChosen">
     <div class="container">
-      <h2>{{ data.title }}</h2>
-    </div>
-    <div class="slide">
-      <ul class="slide-content">
-        <li v-for="(item, idx) in data.slider" :key="idx">
-          <div class="pic">
-            <img :src="item.img" :alt="item.title + '照片'" />
-          </div>
-          <div class="text">
-            <p class="date">{{ item.date }}</p>
-            <div class="tag">
-              <p>{{ item.tag }}</p>
-              <span v-if="item.hot != ''" class="hot">{{ item.hot }}</span>
+      <h2>{{ titleData }}</h2>
+      <div class="slide">
+        <ul class="slide-content">
+          <li v-for="(item, idx) in sliderData" :key="idx">
+            <div class="pic">
+              <img :src="item.img" :alt="item.title + '照片'" />
             </div>
-            <h3>{{ item.title }}</h3>
-            <p class="description">{{ item.description }}</p>
-            <router-link :to="item.detailed.link + `${idx + 1}`" class="more">{{
-              item.detailed.text
-            }}</router-link>
-          </div>
-        </li>
-      </ul>
-      <div class="slide-arrow">
-        <a class="slide-prev disable"></a>
-        <a class="slide-next"></a>
+            <div class="text">
+              <p class="date">{{ item.date }}</p>
+              <div class="tag">
+                <p>{{ item.tag }}</p>
+                <span v-if="item.hot != ''" class="hot">{{ item.hot }}</span>
+              </div>
+              <h3>{{ item.title }}</h3>
+              <p class="description">{{ item.description }}</p>
+              <router-link :to="/detailed/ + `${item.id}`" class="more">閱讀內文</router-link>
+            </div>
+          </li>
+        </ul>
+        <div class="slide-arrow">
+          <a class="slide-prev disable"></a>
+          <a class="slide-next"></a>
+        </div>
       </div>
     </div>
   </section>
@@ -82,21 +44,19 @@
   .idxChosen {
     padding: 80px 0;
     border: 1px solid var(--color-secondary);
-    overflow: hidden;
 
     .slide {
-      max-width: 1432px;
       margin: 24px auto 0;
       position: relative;
 
       &-content {
         max-width: 1432px;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
 
         gap: 24px;
         > li {
-          width: 416px;
+          width: calc(33.33% - 16px);
           flex-shrink: 0;
         }
       }
@@ -136,6 +96,11 @@
         font-weight: 700;
         color: var(--color-black);
         margin-bottom: 8px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
       .description {
         display: -webkit-box;
@@ -217,6 +182,7 @@
         }
       }
       &-prev {
+        margin-left: -68px;
         transform: scaleX(-1);
         &:hover {
           transform: scaleX(-1) scale(1.2);
@@ -226,6 +192,7 @@
         }
       }
       &-next {
+        margin-right: -68px;
         &.disable:hover {
           transform: scale(1);
         }
@@ -235,8 +202,24 @@
   @media (max-width: 1680px) {
     .idxChosen {
       .slide {
+        max-width: 90%;
+      }
+    }
+  }
+  @media (max-width: 1280px) {
+    .idxChosen {
+      .container {
+        max-width: 768px;
+      }
+      .slide {
         padding-bottom: 74px;
-        max-width: 1296px;
+        max-width: 100%;
+        overflow: hidden;
+        &-content {
+          > li {
+            width: 360px;
+          }
+        }
         &-arrow {
           top: unset;
           bottom: 0;
@@ -245,12 +228,21 @@
           gap: 24px;
           padding-right: 12px;
         }
+        &-prev {
+          margin-left: 0;
+        }
+        &-next {
+          margin-right: 0;
+        }
       }
     }
   }
   @media (max-width: 768px) {
     .idxChosen {
       padding: 64px 0;
+      .container {
+        max-width: 375px;
+      }
       .slide {
         &-content {
           > li {
