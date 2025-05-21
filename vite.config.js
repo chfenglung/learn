@@ -8,7 +8,7 @@ import eslintPlugin from 'vite-plugin-eslint'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/blog/',
+  base: '/learn/',
   // base: '/learn/', // 子目錄路徑
   // build: {
   //   outDir: 'dist',
