@@ -61,7 +61,9 @@
             </div>
             <h3>{{ item.title }}</h3>
             <p class="description">{{ item.description }}</p>
-            <a :href="/detailed/ + `${item.id}`" class="more">閱讀內文</a>
+            <router-link :to="/detailed/ + `${item.id}`" target="_blank" class="more"
+              >閱讀內文</router-link
+            >
           </div>
         </li>
       </ul>
