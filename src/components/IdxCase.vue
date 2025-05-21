@@ -278,18 +278,8 @@
       }
     }
   }
-  @media (max-width: 1680px) {
-    .IdxCase {
-      .container {
-        max-width: 1280px;
-      }
-    }
-  }
   @media (max-width: 1280px) {
     .IdxCase {
-      .container {
-        max-width: 768px;
-      }
       .consult {
         flex-direction: column;
         .pic {
@@ -322,9 +312,6 @@
         span {
           display: block;
         }
-      }
-      .container {
-        max-width: 375px;
       }
       .podcast {
         > li {

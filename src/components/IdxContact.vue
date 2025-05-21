@@ -140,26 +140,9 @@
       }
     }
   }
-  @media (max-width: 1680px) {
-    .IdxContact {
-      .container {
-        max-width: 1280px;
-      }
-    }
-  }
-  @media (max-width: 1280px) {
-    .IdxContact {
-      .container {
-        max-width: 768px;
-      }
-    }
-  }
   @media (max-width: 768px) {
     .IdxContact {
       padding: 64px 0;
-      .container {
-        max-width: 375px;
-      }
       .community {
         > li {
           flex-direction: column;

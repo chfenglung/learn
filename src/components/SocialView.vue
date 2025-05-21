@@ -75,13 +75,6 @@
       }
     }
   }
-  @media (max-width: 1280px) {
-    .social {
-      .container {
-        max-width: 768px;
-      }
-    }
-  }
   @media (max-width: 768px) {
     .social {
       display: none;

@@ -1,4 +1,3 @@
-@forward './reset';
 :root {
   --color-white: #fff;
   --color-blue: #0027d5;
@@ -50,6 +49,7 @@ img {
 .container {
   max-width: 1296px;
   margin: 0 auto;
+  position: relative;
 }
 h2 {
   font-size: 64px;
@@ -60,9 +60,18 @@ h2 {
 @media (max-width: 1680px) {
   .container {
     padding: 0 12px;
+    max-width: 1280px;
+  }
+}
+@media (max-width: 1280px) {
+  .container {
+    max-width: 768px;
   }
 }
 @media (max-width: 768px) {
+  .container {
+    max-width: 375px;
+  }
   h2 {
     font-size: 48px;
   }

@@ -178,9 +178,6 @@
   .idxChosen {
     padding: 80px 0;
     border: 1px solid var(--color-secondary);
-    .container {
-      position: relative;
-    }
 
     .slide {
       margin: 24px auto 0;
@@ -354,9 +351,6 @@
   }
   @media (max-width: 1280px) {
     .idxChosen {
-      .container {
-        max-width: 768px;
-      }
       .slide {
         padding-bottom: 80px;
         max-width: 768px;
@@ -387,9 +381,6 @@
   @media (max-width: 768px) {
     .idxChosen {
       padding: 64px 0;
-      .container {
-        max-width: 375px;
-      }
       .slide {
         &-content {
           > li {

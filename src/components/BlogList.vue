@@ -198,9 +198,6 @@
   }
   @media (max-width: 1280px) {
     .BlogList {
-      .container {
-        max-width: 768px;
-      }
       .list {
         max-width: 768px;
         > li {
@@ -212,9 +209,6 @@
   @media (max-width: 768px) {
     .BlogList {
       padding: 64px 0;
-      .container {
-        max-width: 375px;
-      }
       .list {
         > li {
           width: 100%;
