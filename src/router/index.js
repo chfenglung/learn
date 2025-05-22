@@ -5,7 +5,6 @@ import DetailedView from '../views/DetailedView.vue'
 
 const router = createRouter({
   history: createWebHashHistory('/learn/'),
-  base: '/learn/',
   routes: [
     {
       path: '/',
