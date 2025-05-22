@@ -1,23 +1,12 @@
 <script setup>
-  import { ref, onMounted } from 'vue'
-  const data = {
-    pic: {
-      pc: 'https://www.fenglung.url.tw/learn-img/blog/blog-keyPicPc.png',
-      mb: 'https://www.fenglung.url.tw/learn-img/blog/blog-keyPicMb.png'
-    },
-    text: {
-      time: '2024/10/21',
-      tag: '前端開發 x 職涯成長',
-      hot: '最新文章',
-      title: '自學前端不用怕：從零開始的三大關鍵',
-      description:
-        '嗨，我是 Alyse，一名前端工程師兼職涯諮詢師。一直以來，我都很喜歡在部落格分享學習與工作心得，也常有讀者問：「我想轉職/自學前端，該從哪裡開始？」 其實自學的過程既自由又具挑戰性。我整理了三大關鍵，幫助你在短期內建立紮實基礎，並快速累積實戰經驗。希望能替你的前端之路帶來一些啟發與動力！',
-      detailed: {
-        text: '閱讀內文',
-        link: '/detailed/1'
-      }
-    }
-  }
+  import { ref, onMounted, computed } from 'vue'
+  import { useRoute } from 'vue-router'
+  import detailData from '@/assets/detailArticle.json'
+  const route = useRoute()
+
+  const data = computed(() => {
+    return detailData.data
+  })
   const maxFullwidthChars = 76
   const truncatedDescription = ref('')
 
@@ -38,38 +27,40 @@
     }
     return truncated
   }
-
+  const currentArticle = computed(() => {
+    return data.value.find(item => item.id === Number(route.params.id))
+  })
   onMounted(() => {
-    truncatedDescription.value = truncateDescription(data.text.description, maxFullwidthChars)
+    truncatedDescription.value = truncateDescription(
+      currentArticle.value.text.description,
+      maxFullwidthChars
+    )
   })
 </script>
 
 <template>
   <section
-    class="BlogArticle"
+    class="DetailKv"
     :style="{
-      '--picPc': `url(${data.pic.pc})`,
-      '--picMb': `url(${data.pic.mb})`
+      '--picPc': `url(${currentArticle.pic.pc})`,
+      '--picMb': `url(${currentArticle.pic.mb})`
     }"
   >
     <div class="pic"></div>
     <div class="text">
-      <p class="time">{{ data.text.time }}</p>
+      <p class="time">{{ currentArticle.text.time }}</p>
       <p class="subtitle">
-        <span class="tag">{{ data.text.tag }}</span>
-        <span class="hot">{{ data.text.hot }}</span>
+        <span class="tag">{{ currentArticle.text.tag }}</span>
+        <span class="hot">{{ currentArticle.text.hot }}</span>
       </p>
-      <p class="title">{{ data.text.title }}</p>
+      <p class="title">{{ currentArticle.text.title }}</p>
       <p class="description">{{ truncatedDescription }}</p>
-      <router-link :to="data.text.detailed.link" target="_blank" class="detailed">{{
-        data.text.detailed.text
-      }}</router-link>
     </div>
   </section>
 </template>
 
 <style lang="scss">
-  .BlogArticle {
+  .DetailKv {
     --picPc: '';
     --picMb: '';
     display: flex;
@@ -133,7 +124,7 @@
     }
   }
   @media (max-width: 1024px) {
-    .BlogArticle {
+    .DetailKv {
       flex-direction: column;
       .pic {
         width: 100%;
@@ -145,7 +136,7 @@
     }
   }
   @media (max-width: 768px) {
-    .BlogArticle {
+    .DetailKv {
       .pic {
         background-image: var(--picMb);
         padding-top: calc(768 / 768) * 100%;

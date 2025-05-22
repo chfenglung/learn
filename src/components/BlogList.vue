@@ -62,8 +62,8 @@
             <h3>{{ item.title }}</h3>
             <p class="description">{{ item.description }}</p>
             <router-link :to="/detailed/ + `${item.id}`" target="_blank" class="more"
-              >閱讀內文</router-link
-            >
+              >閱讀內文
+            </router-link>
           </div>
         </li>
       </ul>
