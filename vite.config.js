@@ -9,6 +9,10 @@ import eslintPlugin from 'vite-plugin-eslint'
 // https://vitejs.dev/config/
 export default defineConfig({
   base: '/learn/',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets'
+  },
   plugins: [
     vue(),
     eslintPlugin({

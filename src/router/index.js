@@ -4,7 +4,7 @@ import BlogView from '../views/BlogView.vue'
 import DetailedView from '../views/DetailedView.vue'
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHashHistory('/learn/'),
   base: '/learn/',
   routes: [
     {
