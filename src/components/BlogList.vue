@@ -57,7 +57,7 @@
             <p class="date">{{ item.date }}</p>
             <div class="tag">
               <p>{{ item.tag }}</p>
-              <span v-if="item.hot != ''" class="hot">{{ item.hot }}</span>
+              <span v-if="item.hot" class="hot">{{ item.hot }}</span>
             </div>
             <h3>{{ item.title }}</h3>
             <p class="description">{{ item.description }}</p>

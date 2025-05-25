@@ -1,40 +1,11 @@
 <script setup>
-  import { ref, onMounted, computed } from 'vue'
-  import { useRoute } from 'vue-router'
-  import detailData from '@/assets/detailArticle.json'
-  const route = useRoute()
+  import {} from 'vue'
 
-  const data = computed(() => {
-    return detailData.data
-  })
-  const maxFullwidthChars = 76
-  const truncatedDescription = ref('')
-
-  const truncateDescription = (description, limit) => {
-    if (!description) {
-      return ''
+  defineProps({
+    data: {
+      type: Object,
+      required: true
     }
-
-    let truncated = ''
-    let count = 0
-    for (let i = 0; i < description.length; i++) {
-      truncated += description[i]
-      count += description.charCodeAt(i) > 255 ? 1 : 1
-      if (count >= limit) {
-        truncated += '...'
-        break
-      }
-    }
-    return truncated
-  }
-  const currentArticle = computed(() => {
-    return data.value.find(item => item.id === Number(route.params.id))
-  })
-  onMounted(() => {
-    truncatedDescription.value = truncateDescription(
-      currentArticle.value.text.description,
-      maxFullwidthChars
-    )
   })
 </script>
 
@@ -42,19 +13,18 @@
   <section
     class="DetailKv"
     :style="{
-      '--picPc': `url(${currentArticle.pic.pc})`,
-      '--picMb': `url(${currentArticle.pic.mb})`
+      '--picPc': `url(${data.pic.pc})`,
+      '--picMb': `url(${data.pic.mb})`
     }"
   >
     <div class="pic"></div>
     <div class="text">
-      <p class="time">{{ currentArticle.text.time }}</p>
+      <p class="time">{{ data.text.time }}</p>
       <p class="subtitle">
-        <span class="tag">{{ currentArticle.text.tag }}</span>
-        <span class="hot">{{ currentArticle.text.hot }}</span>
+        <span class="tag">{{ data.text.tag }}</span>
+        <span class="hot">{{ data.text.hot }}</span>
       </p>
-      <p class="title">{{ currentArticle.text.title }}</p>
-      <p class="description">{{ truncatedDescription }}</p>
+      <p class="title">{{ data.text.title }}</p>
     </div>
   </section>
 </template>
@@ -107,20 +77,6 @@
       color: var(--color-black);
       line-height: 150%;
       margin-bottom: 8px;
-    }
-    .description {
-      margin-bottom: 16px;
-    }
-    .detailed {
-      border: 1px solid var(--color-black);
-      font-size: 16px;
-      padding: 8px 16px;
-      border-radius: 20px;
-      &:hover {
-        border: 1px solid var(--color-blue);
-        background-color: var(--color-blue);
-        color: var(--color-white);
-      }
     }
   }
   @media (max-width: 1024px) {
