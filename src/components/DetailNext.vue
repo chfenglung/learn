@@ -15,10 +15,10 @@
 
 <template>
   <div class="DetailNext">
-    <button class="nav prev" @click="emit('navigate', prev.id)" :disabled="!prev">
+    <button :disabled="!prev" class="nav prev" @click="emit('navigate', prev.id)">
       <span>上一篇</span>
     </button>
-    <button class="nav next" @click="emit('navigate', next.id)" :disabled="!next">
+    <button :disabled="!next" class="nav next" @click="emit('navigate', next.id)">
       <span>下一篇</span>
     </button>
   </div>
