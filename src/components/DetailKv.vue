@@ -21,8 +21,8 @@
     <div class="text">
       <p class="time">{{ data.text.time }}</p>
       <p class="subtitle">
-        <span class="tag">{{ data.text.tag }}</span>
-        <span class="hot">{{ data.text.hot }}</span>
+        <span v-if="data.text.tag" class="tag">{{ data.text.tag }}</span>
+        <span v-if="data.text.hot" class="hot">{{ data.text.hot }}</span>
       </p>
       <p class="title">{{ data.text.title }}</p>
     </div>

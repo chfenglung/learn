@@ -5,11 +5,11 @@
       "mb": "https://www.fenglung.url.tw/learn-img/blog/blog-keyPicMb.png"
     },
     "text": {
-      "time": "2024/10/21",
-      "tag": "#React #入門基礎",
-      "hot": "最新文章",
-      "title": "React 入門不再迷惘：三步驟帶你上手核心概念",
-      "content": "你是否對 React 感到好奇，卻苦惱於該如何正式啟動學習之路？身為前端工程師兼職涯諮詢師，我常遇到同學問"
+      "time": "2024/06/29",
+      "tag": "#Vue3 #框架學習",
+      "hot": "",
+      "title": "Vue 3 新手指南：快速掌握 Composition API 與關鍵特色",
+      "content": "許多前端開發者對 Vue 一直情有獨鍾，因為它易上手又靈活。隨著 Vue 3 上線，Composition API 的導入更是"
     }
   },
   "content": [
@@ -24,7 +24,7 @@
           "content": {
             "why": {
               "type": "no-link",
-              "text": "你是否對 React 感到好奇，卻苦惱於該如何正式啟動學習之路？身為前端工程師兼職涯諮詢師，我常遇到同學問"
+              "text": "許多前端開發者對 Vue 一直情有獨鍾，因為它易上手又靈活。隨著 Vue 3 上線，Composition API 的導入更是"
             }
           }
         }
