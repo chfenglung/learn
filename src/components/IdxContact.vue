@@ -57,7 +57,7 @@
         </li>
         <li v-for="(item, idx) in data.community.slice(1)" :key="idx">
           <div>
-            <img v-if="item.icon != ''" :src="item.icon" :alt="item.title" class="icon" />
+            <img v-if="item.icon" :src="item.icon" :alt="item.title" class="icon" />
             <span v-for="(txt, t) in item.text" :key="t">{{ txt }} </span>
           </div>
           <span class="icon-arrow"></span>
