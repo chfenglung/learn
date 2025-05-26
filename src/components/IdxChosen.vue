@@ -151,7 +151,6 @@
               <p class="description">{{ item.description }}</p>
               <router-link
                 :to="/detailed/ + `${item.id}`"
-                target="_blank"
                 class="more"
                 @touchstart.passive="preventTouch"
                 @mousedown.stop

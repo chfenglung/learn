@@ -61,7 +61,7 @@
       </p>
       <p class="title">{{ data.text.title }}</p>
       <p class="description">{{ truncatedDescription }}</p>
-      <router-link :to="data.text.detailed.link" target="_blank" class="detailed">{{
+      <router-link :to="data.text.detailed.link" class="detailed">{{
         data.text.detailed.text
       }}</router-link>
     </div>
