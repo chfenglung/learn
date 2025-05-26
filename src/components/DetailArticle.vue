@@ -39,19 +39,48 @@
                 <h4 v-if="subsection.title">{{ subsection.title }}</h4>
                 <!-- 處理不同類型的內容 -->
                 <template v-if="subsection.content">
-                  <p v-if="subsection.content.why" class="why">{{ subsection.content.why }}</p>
+                  <p v-if="subsection.content.why?.type === 'no-link'" class="why">
+                    {{ subsection.content.why.text }}
+                  </p>
+                  <p v-if="subsection.content.why?.type === 'why-link'" class="why">
+                    <span>{{ subsection.content.why.text }}</span>
+                    <a :href="subsection.content.why.link.url">
+                      {{ subsection.content.why.link.txt }}</a
+                    >
+                    <span>{{ subsection.content.why.text2 }}</span>
+                  </p>
                   <p v-if="subsection.content.way" class="way">{{ subsection.content.way }}</p>
                   <ol v-if="subsection.content.how?.type === 'ordered-list'">
-                    <li v-for="(item, itemIndex) in subsection.content.how.items" :key="itemIndex">
-                      {{ item }}
-                    </li>
+                    <template
+                      v-for="(item, itemIndex) in subsection.content.how.items"
+                      :key="itemIndex"
+                    >
+                      <li v-if="item.type === 'no-link'">
+                        {{ item.text }}
+                      </li>
+                      <li v-if="item.type === 'item-link'">
+                        <span>{{ item.text }}</span>
+                        <a :href="item.link.url">{{ item.link.txt }}</a>
+                        <span>{{ item.text2 }}</span>
+                      </li>
+                    </template>
                   </ol>
 
                   <ul v-if="subsection.content.type === 'bullet-points'">
-                    <li v-for="(item, itemIndex) in subsection.content.items" :key="itemIndex">
-                      <strong v-if="item.title">{{ item.title }}:</strong>
-                      {{ item.description || item }}
-                    </li>
+                    <template
+                      v-for="(item, itemIndex) in subsection.content.items"
+                      :key="itemIndex"
+                    >
+                      <li v-if="item.description.type === 'no-link'">
+                        <strong v-if="item.title">{{ item.title }}:</strong>
+                        {{ item.description.text || item }}
+                      </li>
+                      <li v-if="item.description.type === 'item-link'">
+                        <span>{{ item.description.text }}</span>
+                        <a :href="item.description.link.url">{{ item.description.link.txt }}</a>
+                        <span>{{ item.description.text2 }}</span>
+                      </li>
+                    </template>
                   </ul>
 
                   <div v-if="subsection.content.tip" class="tip">
@@ -107,6 +136,11 @@
     p {
       line-height: 150%;
     }
+    .why {
+      a {
+        color: var(--color-blue);
+      }
+    }
     .way {
       margin-top: 8px;
     }
@@ -114,10 +148,16 @@
     ol li {
       list-style-type: decimal;
       margin-left: 1.5em;
+      a {
+        color: var(--color-blue);
+      }
     }
     ul li {
       list-style-type: disc;
       margin-left: 1.5em;
+      a {
+        color: var(--color-blue);
+      }
     }
     .summary,
     .tip {
