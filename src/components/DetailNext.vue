@@ -15,10 +15,10 @@
 
 <template>
   <div class="DetailNext">
-    <button class="nav prev" @click="emit('navigate', prev.id)">
+    <button class="nav prev" @click="emit('navigate', prev.id)" :disabled="!prev">
       <span>上一篇</span>
     </button>
-    <button class="nav next" @click="emit('navigate', next.id)">
+    <button class="nav next" @click="emit('navigate', next.id)" :disabled="!next">
       <span>下一篇</span>
     </button>
   </div>
@@ -37,6 +37,19 @@
       width: 100%;
       max-width: 108px;
       color: var(--color-grey);
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        &:hover {
+          background-color: var(--color-white);
+          color: var(--color-grey);
+          opacity: 0.5;
+          span::before {
+            border-left: 1px solid var(--color-grey);
+            border-bottom: 1px solid var(--color-grey);
+          }
+        }
+      }
       &:hover {
         color: var(--color-white);
         background-color: var(--color-blue);

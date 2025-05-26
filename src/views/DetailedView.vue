@@ -1,15 +1,39 @@
 <script setup>
   import { ref, onMounted, watch, computed } from 'vue'
   import { useHead } from '@vueuse/head'
-  import { useRoute } from 'vue-router'
+  import { useRoute, useRouter } from 'vue-router'
   import DetailKv from '../components/DetailKv.vue'
   import DetailArticle from '../components/DetailArticle.vue'
   import SocialView from '../components/SocialView.vue'
+  import DetailNext from '../components/DetailNext.vue'
+  import listData from '@/assets/articleList.json'
 
+  const data = computed(() => {
+    return listData.data
+  })
   const route = useRoute()
+  const router = useRouter()
   const articleData = ref(null)
   const loading = ref(true)
   const error = ref(null)
+
+  // 獲取相鄰文章資訊
+  const adjacentArticles = computed(() => {
+    const currentId = Number(route.params.id)
+    const index = data.value.findIndex(article => article.id === currentId)
+
+    return {
+      prev: index > 0 ? data.value[index - 1] : null,
+      next: index < data.value.length - 1 ? data.value[index + 1] : null
+    }
+  })
+  // 導航到相鄰文章
+  const navigateTo = id => {
+    if (id) {
+      router.push(`/detailed/${id}`)
+    }
+  }
+
   // 根據 ID 動態載入對應的 JSON 檔案
   const loadArticleData = async id => {
     try {
@@ -96,7 +120,13 @@
     <!-- 正常顯示 -->
     <template v-else-if="articleData">
       <DetailKv :data="articleData.head"></DetailKv>
-      <DetailArticle :id="route.params.id" :content="articleData.content"></DetailArticle>
+      <DetailArticle :id="route.params.id" :content="articleData.content">
+        <DetailNext
+          :prev="adjacentArticles.prev"
+          :next="adjacentArticles.next"
+          @navigate="navigateTo"
+        />
+      </DetailArticle>
     </template>
 
     <!-- 文章不存在 -->

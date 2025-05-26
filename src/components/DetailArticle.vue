@@ -1,7 +1,6 @@
 <script setup>
   import { ref, watch } from 'vue'
   import { useWindowSize } from '@vueuse/core'
-  import DetailNext from '../components/DetailNext.vue'
 
   defineProps({
     content: {
@@ -96,7 +95,7 @@
             </template>
           </div>
         </template>
-        <DetailNext></DetailNext>
+        <slot></slot>
       </div>
     </div>
   </section>
