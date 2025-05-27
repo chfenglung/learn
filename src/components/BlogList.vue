@@ -3,18 +3,31 @@
   import PaginationView from './PaginationView.vue'
   import listData from '@/assets/articleList.json'
 
-  const data = computed(() => {
-    return listData.data
-  })
+  const keyword = ref('')
   const nowPage = ref(1)
   const itemsPerPage = 12 // 每頁顯示的項目數
-  const pageNum = computed(() => Math.ceil(data.value.length / itemsPerPage)) // 根據data長度計算總頁數
 
-  // 計算當前頁顯示的數據
+  // 過濾符合搜尋條件的數據
+  const filteredData = computed(() => {
+    if (!keyword.value) return listData.data
+
+    const searchTerm = keyword.value.toLowerCase()
+    return listData.data.filter(
+      item =>
+        item.title.toLowerCase().includes(searchTerm) ||
+        item.description.toLowerCase().includes(searchTerm) ||
+        item.tag.toLowerCase().includes(searchTerm)
+    )
+  })
+
+  // 計算總頁數（基於過濾後的數據）
+  const pageNum = computed(() => Math.ceil(filteredData.value.length / itemsPerPage))
+
+  // 計算當前頁顯示的數據（基於過濾後的數據）
   const paginatedData = computed(() => {
     const start = (nowPage.value - 1) * itemsPerPage
     const end = start + itemsPerPage
-    return data.value.slice(start, end)
+    return filteredData.value.slice(start, end)
   })
 
   const scrollToAnchor = anchor => {
@@ -33,6 +46,7 @@
       })
     }
   }
+
   const changePage = async page => {
     nowPage.value = page
     scrollToAnchor('#List')
@@ -45,7 +59,7 @@
       <div class="search">
         <div>
           <img src="https://www.fenglung.url.tw/learn-img/blog/icon-search.svg" alt="icon-search" />
-          <input type="text" placeholder="搜尋你感興趣的文章" />
+          <input v-model="keyword" type="text" placeholder="搜尋你感興趣的文章" />
         </div>
       </div>
       <ul class="list">
