@@ -95,7 +95,6 @@
       h3 {
         font-size: 28px;
         font-weight: 700;
-        line-height: 150%;
         margin-bottom: 8px;
         position: relative;
         &::before {
@@ -114,7 +113,6 @@
       margin: 32px auto 0;
       font-size: 28px;
       font-weight: 700;
-      line-height: 150%;
       color: var(--color-black);
 
       a {

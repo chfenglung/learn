@@ -105,12 +105,10 @@
         h1 {
           font-size: 120px;
           font-weight: 900;
-          line-height: 150%;
         }
         p {
           font-size: 28px;
           font-weight: 700;
-          line-height: 150%;
         }
       }
     }
@@ -122,7 +120,6 @@
       padding: 80px 40px;
       width: calc(1077 / 1920) * 100%;
       p {
-        line-height: 150%;
         font-size: 28px;
         & ~ p {
           margin-top: 16px;

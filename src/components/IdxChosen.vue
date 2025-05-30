@@ -204,7 +204,6 @@
         padding-top: 16px;
       }
       .date {
-        font-size: 16px;
         font-weight: 500;
         margin-bottom: 4px;
       }
@@ -216,14 +215,12 @@
           font-weight: 500;
           color: var(--color-blue);
           display: inline;
-          line-height: 150%;
         }
         .hot {
           background-color: var(--color-blue);
           color: var(--color-white);
           border-radius: 18px;
           margin-left: 8px;
-          font-size: 16px;
           font-weight: 700;
           display: inline-block;
           padding: 6px 12px;
@@ -232,7 +229,6 @@
       }
       h3 {
         font-size: 28px;
-        line-height: 150%;
         font-weight: 700;
         color: var(--color-black);
         margin-bottom: 8px;
@@ -248,7 +244,6 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
-        font-size: 16px;
         font-weight: 500;
         color: var(--color-grey);
       }
@@ -256,7 +251,6 @@
         color: var(--color-grey);
         border: 1px solid var(--color-black);
         border-radius: 20px;
-        font-size: 16px;
         font-weight: 500;
         padding: 8px 16px;
         display: inline-block;
@@ -361,12 +355,13 @@
         }
         &-arrow {
           top: unset;
-          left: unset;
+          left: 50%;
           bottom: 6px;
           transform: none;
           justify-content: flex-end;
           gap: 24px;
           padding: 0 24px;
+          transform: translateX(-50%);
         }
         &-prev {
           margin-left: 0;
@@ -383,7 +378,7 @@
       .slide {
         &-content {
           > li {
-            width: 351px;
+            width: 100%;
           }
         }
       }

@@ -21,7 +21,7 @@
     <div class="text">
       <p class="time">{{ data.text.time }}</p>
       <p class="subtitle">
-        <span v-if="data.text.tag" class="tag">{{ data.text.tag }}</span>
+        <a v-if="data.text.tag" href="javascript:;" class="tag">{{ data.text.tag }}</a>
         <span v-if="data.text.hot" class="hot">{{ data.text.hot }}</span>
       </p>
       <p class="title">{{ data.text.title }}</p>
@@ -49,7 +49,6 @@
       padding: 24px;
     }
     .time {
-      font-size: 16px;
       margin-bottom: 4px;
     }
     .subTitle {
@@ -59,14 +58,13 @@
     }
     .tag {
       font-size: 24px;
-      line-height: 150%;
+      color: var(--color-blue);
     }
     .hot {
       background-color: var(--color-blue);
       color: var(--color-white);
       border-radius: 18px;
       padding: 6px 12px;
-      font-size: 16px;
       font-weight: 700;
       margin-left: 8px;
       display: inline-block;
@@ -75,7 +73,6 @@
       font-size: 28px;
       font-weight: 700;
       color: var(--color-black);
-      line-height: 150%;
       margin-bottom: 8px;
     }
   }

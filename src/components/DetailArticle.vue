@@ -122,18 +122,13 @@
     h3 {
       font-size: 28px;
       font-weight: 700;
-      line-height: 150%;
       color: var(--color-blue);
       margin-bottom: 24px;
     }
     h4 {
       font-size: 20px;
       font-weight: 700;
-      line-height: 150%;
       margin-bottom: 12px;
-    }
-    p {
-      line-height: 150%;
     }
     .why {
       a {

@@ -81,7 +81,6 @@
         align-items: center;
         font-size: 28px;
         font-weight: 500;
-        line-height: 150%;
         border-bottom: 1px solid var(--color-black);
         padding: 16px 0;
         &:hover {
@@ -91,6 +90,7 @@
           span {
             &:first-of-type {
               text-decoration: underline;
+              word-break: break-all;
             }
           }
         }

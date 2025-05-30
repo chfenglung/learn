@@ -144,7 +144,6 @@
     text-align: center;
     padding: 50px;
     font-size: 18px;
-    line-height: 150%;
     a {
       color: var(--color-blue);
       margin-top: 20px;

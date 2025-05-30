@@ -59,7 +59,7 @@
       <div class="search">
         <div>
           <img src="https://www.fenglung.url.tw/learn-img/blog/icon-search.svg" alt="icon-search" />
-          <input v-model="keyword" type="text" placeholder="搜尋你感興趣的文章" />
+          <input v-model="keyword" type="search" placeholder="搜尋你感興趣的文章" />
         </div>
       </div>
       <ul class="list">
@@ -68,9 +68,9 @@
             <img :src="item.img" :alt="item.title + '照片'" />
           </div>
           <div class="text">
-            <p class="date">{{ item.date }}</p>
+            <p class="time">{{ item.date }}</p>
             <div class="tag">
-              <p>{{ item.tag }}</p>
+              <a href="javascript:;">{{ item.tag }}</a>
               <span v-if="item.hot" class="hot">{{ item.hot }}</span>
             </div>
             <h3>{{ item.title }}</h3>
@@ -109,7 +109,8 @@
         margin-right: 10px;
       }
 
-      input[type='text'] {
+      input[type='text'],
+      input[type='search'] {
         position: relative;
         width: 100%;
         max-width: 318px;
@@ -139,8 +140,7 @@
       .text {
         padding-top: 16px;
       }
-      .date {
-        font-size: 16px;
+      .time {
         font-weight: 500;
         margin-bottom: 4px;
       }
@@ -148,10 +148,9 @@
         display: flex;
         align-items: center;
 
-        p {
+        a {
           font-size: 24px;
           font-weight: 500;
-          line-height: 150%;
           color: var(--color-blue);
           display: inline;
         }
@@ -160,7 +159,6 @@
           color: var(--color-white);
           border-radius: 18px;
           margin-left: 8px;
-          font-size: 16px;
           font-weight: 700;
           display: inline-block;
           padding: 6px 12px;
@@ -172,7 +170,6 @@
         font-weight: 700;
         color: var(--color-black);
         margin-bottom: 8px;
-        line-height: 150%;
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
@@ -185,7 +182,6 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
-        font-size: 16px;
         font-weight: 500;
         color: var(--color-grey);
       }
@@ -193,7 +189,6 @@
         color: var(--color-grey);
         border: 1px solid var(--color-black);
         border-radius: 20px;
-        font-size: 16px;
         font-weight: 500;
         padding: 8px 16px;
         display: inline-block;
@@ -213,7 +208,7 @@
       .list {
         max-width: 768px;
         > li {
-          width: 360px;
+          width: calc(50% - 12px);
         }
       }
     }

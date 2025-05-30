@@ -151,7 +151,6 @@
       padding: 144px 40px 80px;
       width: 100%;
       max-width: 526px;
-      font-size: 16px;
       font-weight: 700;
       p {
         position: relative;
@@ -185,7 +184,6 @@
       align-self: flex-end;
       .btn-reserve {
         color: var(--color-blue);
-        font-size: 16px;
         font-weight: 700;
         padding: 8px 16px;
         border: 1px solid var(--color-blue);
@@ -211,7 +209,6 @@
       h3 {
         font-size: 24px;
         font-weight: 700;
-        line-height: 150%;
         color: #000;
         margin-bottom: 8px;
         display: -webkit-box;
@@ -222,7 +219,6 @@
       }
       a {
         color: var(--color-grey);
-        font-size: 16px;
         font-weight: 500;
         padding: 8px 16px;
         display: inline-block;
@@ -242,7 +238,6 @@
       > li {
         position: relative;
         padding-left: 24px;
-        font-size: 16px;
         font-weight: 500;
         color: var(--color-grey);
         display: -webkit-box;
