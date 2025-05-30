@@ -1,9 +1,4 @@
 @forward './reset';
 @use './base.scss';
 @use './animation';
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500..700&display=swap');
-
-#app {
-  min-width: 375px;
-  margin: 0 auto;
-}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500..700..900&display=swap');

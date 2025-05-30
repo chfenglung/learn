@@ -38,7 +38,6 @@
 <style lang="scss">
   .NavBar {
     height: 90px;
-    min-width: 375px;
     margin: 0 auto;
     &.fx {
       background-color: var(--color-background);

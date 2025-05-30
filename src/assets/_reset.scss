@@ -3,6 +3,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* Remove default margin */
@@ -29,6 +31,7 @@ ol {
 img,
 svg {
   display: block;
+  width: 100%;
   max-width: 100%;
   height: auto;
 }
@@ -56,26 +59,3 @@ input::placeholder {
   font: inherit;
   color: currentColor;
 }
-
-// ------> 表單元素 reset
-// input,
-// select {
-//   appearance: none;
-//   margin: 0;
-//   padding: 0;
-//   background-color: transparent;
-//   border: none;
-//   outline: none;
-// }
-
-// select::-ms-expand {
-//   display: none;
-// }
-
-// button {
-//   appearance: none;
-//   padding: 0;
-//   background-color: transparent;
-//   border: none;
-//   outline: none;
-// }

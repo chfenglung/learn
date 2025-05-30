@@ -9,14 +9,6 @@
   --color-tip: #ededed;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
   color: var(--color-black);
   background: var(--color-background);
@@ -36,34 +28,20 @@ body {
     'Helvetica Neue';
   font-size: 16px;
   font-weight: 500;
-  line-height: 150%;
-  min-width: 375px;
-  margin: 0 auto;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-img {
-  width: 100%;
-  max-width: 100%;
+  line-height: 1.5;
 }
 .container {
   max-width: 1296px;
   margin: 0 auto;
   position: relative;
+  padding: 0 12px;
 }
 h2 {
   font-size: 64px;
   font-weight: 700;
-  line-height: 150%;
   color: var(--color-black);
 }
-@media (max-width: 1680px) {
-  .container {
-    padding: 0 12px;
-    max-width: 1280px;
-  }
-}
+
 @media (max-width: 1280px) {
   .container {
     max-width: 768px;
