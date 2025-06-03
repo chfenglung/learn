@@ -142,7 +142,7 @@
               <img :src="item.img" :alt="item.title + '照片'" draggable="false" />
             </div>
             <div class="text">
-              <p class="date">{{ item.date }}</p>
+              <time class="date">{{ item.date }}</time>
               <div class="tag">
                 <p>{{ item.tag }}</p>
                 <span v-if="item.hot" class="hot">{{ item.hot }}</span>

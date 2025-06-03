@@ -19,7 +19,7 @@
   >
     <div class="pic"></div>
     <div class="text">
-      <p class="time">{{ data.text.time }}</p>
+      <time class="time">{{ data.text.time }}</time>
       <p class="subtitle">
         <a v-if="data.text.tag" href="javascript:;" class="tag">{{ data.text.tag }}</a>
         <span v-if="data.text.hot" class="hot">{{ data.text.hot }}</span>

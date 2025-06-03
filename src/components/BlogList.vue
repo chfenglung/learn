@@ -68,7 +68,7 @@
             <img :src="item.img" :alt="item.title + '照片'" />
           </div>
           <div class="text">
-            <p class="time">{{ item.date }}</p>
+            <time class="time">{{ item.date }}</time>
             <div class="tag">
               <a href="javascript:;">{{ item.tag }}</a>
               <span v-if="item.hot" class="hot">{{ item.hot }}</span>
